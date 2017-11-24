@@ -4,9 +4,15 @@
 #include <stdio.h>
 #include "boolean.h"
 #include <stdlib.h>
+#include <string.h>
 
 void about() {
 	printf("-------ABOUT-------\n");
+	printf("Game ini terinspirasi dari game Candy Crush Saga.\nGame ini dibuat dalam rangka Tugas Besar Matakuliah Algoritma dan Struktur Data, 2017\n");
+}
+
+void howToPlay() {
+	printf("-------HOW TO PLAY-------\n");
 	printf("Game ini terinspirasi dari game Candy Crush Saga.\nGame ini dibuat dalam rangka Tugas Besar Matakuliah Algoritma dan Struktur Data, 2017\n");
 }
 
@@ -17,9 +23,8 @@ void swap(char *X, char *Y){
 	*Y=temp;
 }
 
-void menu() {
-	char conf_exit;
-	int pil=0;
+string welcomescrn(){
+	string name;
 	//system("clear");
 	printf("  /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$  /$$     /$$        /$$$$$$  /$$$$$$$  /$$   /$$  /$$$$$$  /$$   /$$\n");
 	printf(" /$$__  $$ /$$__  $$| $$$ | $$| $$__  $$|  $$   /$$/       /$$__  $$| $$__  $$| $$  | $$ /$$__  $$| $$  | $$\n");
@@ -28,8 +33,16 @@ void menu() {
 	printf("| $$    $$| $$  | $$| $$\\  $$$| $$  | $$    | $$          | $$    $$| $$  \\ $$| $$  | $$ /$$  \\ $$| $$  | $$\n");
 	printf("|  $$$$$$/| $$  | $$| $$ \\  $$| $$$$$$$/    | $$          |  $$$$$$/| $$  | $$|  $$$$$$/|  $$$$$$/| $$  | $$\n");
 	printf(" \\______/ |__/  |__/|__/  \\__/|_______/     |__/           \\______/ |__/  |__/ \\______/  \\______/ |__/  |__/\n");
-                                                                                                            
-                                                                                                            
+    printf("\n\n\n 									Who's Playing?\n")                                                                                                        
+    scanf(" %s",&name);
+
+    return name; 
+}
+
+void menu() {
+	char conf_exit;
+	int pil=0;
+	                                                                                                     
                                                                                                             
 
 	printf("-------MENU-------\n");
@@ -98,7 +111,7 @@ boolean isValidMove(int row, int col, char dir)
 	return valid;
 }
 /*
-void Move(Matriks *M){
+void Move(Candy *M){
 	int select,row1,row2,col1,col2;
 	char dir;
 	do {
